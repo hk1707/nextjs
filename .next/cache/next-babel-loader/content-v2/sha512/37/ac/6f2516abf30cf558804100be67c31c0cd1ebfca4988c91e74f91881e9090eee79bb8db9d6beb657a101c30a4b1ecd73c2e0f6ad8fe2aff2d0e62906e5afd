@@ -1,0 +1,1 @@
+{"ast":null,"code":"const clientConfig = {\n  siteuri: 'http://localhost:3000',\n  graphurl: 'http://hitesh.demoproject.info/graphql'\n};\nexport default clientConfig;","map":null,"metadata":{},"sourceType":"module"}

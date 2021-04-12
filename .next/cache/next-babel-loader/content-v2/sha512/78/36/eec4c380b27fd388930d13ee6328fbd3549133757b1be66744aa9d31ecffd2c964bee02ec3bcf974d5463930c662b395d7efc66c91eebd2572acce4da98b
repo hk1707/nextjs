@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport Nav from \"./Nav\";\n\nvar Header = function Header() {\n  return /*#__PURE__*/_jsx(\"div\", {\n    className: \"header\",\n    children: /*#__PURE__*/_jsx(Nav, {})\n  });\n};\n\nexport default Header;","map":null,"metadata":{},"sourceType":"module"}
