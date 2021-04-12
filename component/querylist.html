@@ -1,0 +1,121 @@
+
+<!-- Product Query With Variable  -->
+query  
+  Productsd($maxPrice:Float) {
+  products(where: { maxPrice: $maxPrice }) {
+      nodes {
+        id
+        productId
+        averageRating
+        slug
+        description
+        image {
+          uri
+          title
+          srcSet
+          sourceUrl
+        }
+        name
+        ... on VariableProduct {
+          id
+          name
+          price
+          productId
+          regularPrice
+          image{
+            id
+            title
+            altText
+            uri
+            sourceUrl
+            srcSet
+          }
+        }
+        ... on SimpleProduct {
+          id
+          name
+          averageRating
+          price
+          productId
+          image {
+            id
+            title
+            altText
+            uri
+            sourceUrl
+            srcSet          
+          }
+        }
+      }
+  }
+  }
+<!-- variable -->
+{
+    "maxPrice": 15 
+}
+<!-- Product Query With Variable end -->
+
+<!-- -------------------------------------- -->
+
+<!-- Product Filter Query  -->
+
+query Productsd($first: Int, $maxPrice: Float , $field: ProductsOrderByEnum! , $order: OrderEnum) {
+  products(first: $first, where: {maxPrice: $maxPrice, orderby: {field:$field , order:$order}}) {
+    nodes {
+      id
+      productId
+      averageRating
+      slug
+      description
+      image {
+        uri
+        title
+        srcSet
+        sourceUrl
+      }
+      name
+      ... on VariableProduct {
+        id
+        name
+        price
+        productId
+        regularPrice
+        image {
+          id
+          title
+          altText
+          uri
+          sourceUrl
+          srcSet
+        }
+      }
+      ... on SimpleProduct {
+        id
+        name
+        averageRating
+        price
+        productId
+        image {
+          id
+          title
+          altText
+          uri
+          sourceUrl
+          srcSet
+        }
+      }
+    }
+  }
+}
+<!-- Variable -->
+{	
+  "first": 4,
+ "maxPrice": 100,
+  "field": "PRICE",
+  "order": "ASC"
+  
+}
+
+<!-- Product Filter Query  end  -->
+
+<!-- -------------------------------------- -->
